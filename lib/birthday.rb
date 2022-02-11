@@ -11,4 +11,8 @@ class Birthday
   def date
     "#{@month}/#{@day}"
   end
+
+  def days_until
+    (Date.parse(self.date)-Date.parse(Date.today.to_s)).to_s.split("/")[0].to_i
+  end
 end

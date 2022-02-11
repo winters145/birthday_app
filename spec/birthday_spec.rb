@@ -23,4 +23,10 @@ describe Birthday do
       expect(subject.date).to eq "8/6"
     end
   end
+
+  describe '#days_until' do
+    it 'calculates and returns the days until the given birthday' do
+      expect(subject.days_until).to eq ((Date.parse(subject.date)-Date.parse(Date.today.to_s)).to_s.split("/")[0].to_i)
+    end
+  end
 end
