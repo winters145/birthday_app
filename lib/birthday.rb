@@ -7,4 +7,8 @@ class Birthday
     @day = day
     @month = month
   end
+
+  def date
+    "#{@month}/#{@day}"
+  end
 end

@@ -13,10 +13,12 @@ get '/' do
 end
 
 get '/birthday' do
-  @name = params[:name]
-  @day = params[:day]
-  @month = params[:month]
-  @birthday = "#{@month}/#{@day}"
+  $birthday = Birthday.new(params[:name], params[:day], params[:month])
+  @birthday_1 = $birthday
+  # @name = params[:name]
+  # @day = params[:day]
+  # @month = params[:month]
+  @birthday = "#{@birthday_1.month}/#{@birthday_1.day}"
   erb :birthday
 end
 

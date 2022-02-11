@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<% if @day.to_i == Date.today.to_s[-2,2].to_i && @month.to_i == Date.today.to_s[5,2].to_i %>
-<h1> Happy Birthday, <%= @name %>! </h1>
+<% if @birthday_1.day.to_i == Date.today.to_s[-2,2].to_i && @birthday_1.month.to_i == Date.today.to_s[5,2].to_i %>
+<h1> Happy Birthday, <%= @birthday_1.name %>! </h1>
 <% else %>
-<h2> Your birthday will be in <%= (Date.parse(@birthday)-Date.parse(Date.today.to_s)).to_s.split("/")[0].to_i %> days, <%= @name %>. </h2>
+<h2> Your birthday will be in <%= (Date.parse(@birthday)-Date.parse(Date.today.to_s)).to_s.split("/")[0].to_i %> days, <%= @birthday_1.name %>. </h2>
 <% end %>
